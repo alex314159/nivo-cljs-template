@@ -1,0 +1,13 @@
+{:paths ["src/main" "resources" "target"]
+ :deps  {org.clojure/clojure       {:mvn/version "1.10.3"}
+         org.clojure/clojurescript {:mvn/version "1.10.866"}
+         reagent/reagent           {:mvn/version "1.1.0"}
+         thheller/shadow-cljs      {:mvn/version "2.14.6"}
+         cljs-http/cljs-http       {:mvn/version "0.1.46"}
+         lilactown/helix           {:mvn/version "0.1.1"}
+
+        }
+ :aliases {
+           :shadow-cljs {:main-opts ["-m" "shadow.cljs.devtools.cli"]}
+           ;:cljs {:main-opts ["-m" "shadow.cljs.devtools.cli"]}
+           }}
