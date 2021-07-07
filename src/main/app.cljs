@@ -60,6 +60,23 @@
                                :enableSlices "x"
                                :padding      0.31}))
 
+(defn stacked-line-chart-example [] (line-chart
+                              {:data         [{:id   "Curve A"
+                                               :data [{:x "plane", :y 164}
+                                                      {:x "helicopter", :y 125}
+                                                      {:x "boat", :y 107}
+                                                      {:x "train", :y 72}]}
+                                              {:id   "Curve B"
+                                               :data [{:x "plane", :y 20}
+                                                      {:x "helicopter", :y 14}
+                                                      {:x "boat", :y 50}
+                                                      {:x "train", :y 5}]}]
+                               :yScale       {:type "linear" :stacked true}
+                               :enableArea true
+                               :margin       {:top 10, :right 30, :bottom 50, :left 50}
+                               :enableSlices "x"
+                               :padding      0.3}))
+
 (defn some-component []
       [:div
        [:h1 "Nivo examples"]
@@ -68,7 +85,8 @@
        [line-chart-example]
        [:h3 "Bar chart example"]
        [:div {:style {:height "600px" :width "600px"}} [bar-chart-example]]
-       [line-chart-example]
+       [:h3 "Stacked line chart example"]
+       [:div {:style {:height "600px" :width "600px"}} [stacked-line-chart-example]]
 
        ])
 
