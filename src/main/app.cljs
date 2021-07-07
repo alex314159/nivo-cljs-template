@@ -39,26 +39,23 @@
                                                :burger 125,
                                                :donut 172,
                                                :hot-dog 176,
-                                               :sandwich 119,
                                                :country "AD"}
                                               {:fries 117,
                                                :kebab 178,
                                                :burger 77,
                                                :donut 46,
                                                :hot-dog 56,
-                                               :sandwich 150,
                                                :country "AE"}
                                               {:fries 45,
                                                :kebab 62,
                                                :burger 132,
                                                :donut 122,
                                                :hot-dog 143,
-                                               :sandwich 162,
                                                :country "AF",
                                                }]
-                               :keys [:fries :kebab :burger :donut :hot-dog :sandwich]
+                               :keys [:fries :kebab :burger :donut :hot-dog]
                                :indexBy :country
-
+                               :groupMode :grouped
                                :margin       {:top 10, :right 30, :bottom 50, :left 50}
                                :enableSlices "x"
                                :padding      0.31}))
@@ -67,10 +64,10 @@
       [:div
        [:h1 "Nivo examples"]
        [:h3 "Line chart example"]
-       [:div {:style {:height "400px" :width "400px"}} [line-chart-example]]
+       [:div {:style {:height "600px" :width "600px"}} [line-chart-example]]
        [line-chart-example]
        [:h3 "Bar chart example"]
-       [:div {:style {:height "400px" :width "400px"}} [bar-chart-example]]
+       [:div {:style {:height "600px" :width "600px"}} [bar-chart-example]]
        [line-chart-example]
 
        ])

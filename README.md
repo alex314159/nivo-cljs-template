@@ -5,7 +5,7 @@ A minimal template for displaying nivo charts with Clojurescript.
 
 ## Acknowledgements
 
-Thanks to xxx for getting me started
+Thanks to @wilkerlucio for getting me started
 
 ## See also
 
