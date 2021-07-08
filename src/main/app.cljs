@@ -53,12 +53,13 @@
                                                :hot-dog 143,
                                                :country "AF",
                                                }]
+                               :colors ["blue" "red" "orange"]
                                :keys [:fries :kebab :burger :donut :hot-dog]
                                :indexBy :country
                                :groupMode :grouped
                                :margin       {:top 10, :right 30, :bottom 50, :left 50}
                                :enableSlices "x"
-                               :padding      0.31}))
+                               :padding      0.3}))
 
 (defn stacked-line-chart-example [] (line-chart
                               {:data         [{:id   "Curve A"
@@ -83,7 +84,7 @@
        [:h3 "Line chart example"]
        [:div {:style {:height "600px" :width "600px"}} [line-chart-example]]
        [line-chart-example]
-       [:h3 "Bar chart example"]
+       [:h3 "Bar chart example - custom colours"]
        [:div {:style {:height "600px" :width "600px"}} [bar-chart-example]]
        [:h3 "Stacked line chart example"]
        [:div {:style {:height "600px" :width "600px"}} [stacked-line-chart-example]]
