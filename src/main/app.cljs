@@ -3,17 +3,18 @@
         [helix.core :as helix :refer [defnc $]]
         ["@nivo/bar" :refer [ResponsiveBar]]
         ["@nivo/line" :refer [ResponsiveLine]]
+        ;["@nivo/treemap" :refer [ResponsiveTreeMap]]
         [reagent.core :as r]
-                [reagent.dom :as rd]
-                ))
+        [reagent.dom :as rd]
+        ))
 
 (defn component-factory [component]
-(fn factory-constructor [props]
-  (helix/create-element component
-                        (clj->js props))))
+  (fn factory-constructor [props]
+    (helix/create-element component (clj->js props))))
 
 (def ^:export line-chart (component-factory ResponsiveLine))
 (def ^:export bar-chart (component-factory ResponsiveBar))
+;(def ^:export tree-map-chart (component-factory ResponsiveTreeMap))
 
 (defn line-chart-example [] (line-chart
               {:data         [{:id   "Curve A"
@@ -78,17 +79,34 @@
                                :enableSlices "x"
                                :padding      0.3}))
 
+;(defn tree-map-chart-example []
+;  (tree-map-chart
+;    {:data data/tree-map-data
+;     :identity "name"
+;     :value "loc"
+;     :valueFormat ".02s"
+;     :margin       {:top 10, :right 10, :bottom 10, :left 10}
+;     :labelSkipSize 12
+;     ;:labelTextColor {:from "color" :modifiers [["darker" 1.2]]}
+;     ;:parentLabelTextColor {:from "color" :modifiers [["darker" 2]]}
+;     ;:borderColor {:from "color" :modifiers [["darker" 0.1]]}
+;     }
+;    )
+;
+;  )
+
 (defn some-component []
       [:div
        [:h1 "Nivo examples"]
        [:h3 "Line chart example"]
        [:div {:style {:height "600px" :width "600px"}} [line-chart-example]]
-       [line-chart-example]
-       [:h3 "Bar chart example - custom colours"]
-       [:div {:style {:height "600px" :width "600px"}} [bar-chart-example]]
-       [:h3 "Stacked line chart example"]
-       [:div {:style {:height "600px" :width "600px"}} [stacked-line-chart-example]]
 
+       [:h3 "Bar chart example - custom colours"]
+       ;[:div {:style {:height "600px" :width "600px"}} [bar-chart-example]]
+       [:h3 "Stacked line chart example"]
+       ;       [:div {:style {:height "600px" :width "600px"}} [stacked-line-chart-example]]
+       ;[:h3 "Tree map chart example"]
+       ;[:div {:style {:height "800px" :width "800px"}} "hi" ]    ;[tree-map-chart-example]
        ])
 
 (defn ^:dev/after-load mountit []
